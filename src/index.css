@@ -1,0 +1,64 @@
+/* index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Make all asterisks for required fields red === */
+label span.text-red-500,
+label span:has(> .text-red-500),
+label:has(span:contains("*")) {
+  color: #ef4444 !important; /* Tailwind red-500 */
+}
+
+/* Makes the asterisk in placeholders red */
+input::placeholder {
+  color: #6b7280; /* Tailwind's text-gray-500 */
+}
+
+.input-required::after {
+  content: " *";
+  color: #ef4444; /* Tailwind's red-500 */
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* === Make all placeholder asterisks (*) red === */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: inherit;
+}
+
+input::placeholder span,
+textarea::placeholder span {
+  color: inherit;
+}
+
+input::placeholder {
+  color: #6b7280; /* gray-500 default */
+}
+
+input::placeholder:has(*) {
+  color: #ef4444; /* red-500 for * only (modern browsers) */
+}
+
+
+/* Reset body margin */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars for elements with .no-scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
