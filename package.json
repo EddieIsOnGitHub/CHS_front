@@ -33,7 +33,7 @@
     "react-router-hash-link": "^2.4.3"
   },
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "keywords": [],
   "author": "",
