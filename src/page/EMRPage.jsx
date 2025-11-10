@@ -139,11 +139,16 @@ ${formData.additionalInfo}
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           type: "emr",
-          name: `${formData.firstName} ${formData.lastName}`,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
+          organization: formData.organization,
+          phone: formData.phone,
+          time: formData.time,
           message: buildMessage(),
         }),
       });
+
 
       if (!res.ok) throw new Error("Failed to submit");
 
